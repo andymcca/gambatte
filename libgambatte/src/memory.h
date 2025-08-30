@@ -105,8 +105,6 @@ class Memory {
 	void rescheduleHdmaReschedule();
 	
 	void refreshPalettes(unsigned cycleCounter);
-	void set_doubleSpeed(unsigned cycleCounter);
-	void set_singleSpeed(unsigned cycleCounter);
 
 public:
 	Memory(const Interrupter &interrupter);
@@ -183,6 +181,8 @@ public:
 	std::vector<const FilterInfo*> filterInfo() const {
 		return display.filterInfo();
 	}
+	
+	void setDmgPaletteColor(unsigned palNum, unsigned colorNum, unsigned rgb32, unsigned cycleCounter);
 };
 
 #endif
