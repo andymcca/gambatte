@@ -1,0 +1,58 @@
+-- 0.2.0 -- 2007-09-05 --
+libgambatte:
+    - fix 64-bit compile and segfault. Thanks to Nach for noticing.
+    - Add zip support. Thanks to Nach for contributing nice, clear code
+    - fix sound ch4 frequency calculation
+    - Several PPU reads timings depend on wx. Thanks to franpa for noticing the
+      corrupt line in The LoZ: Oracle of Seasons.
+    - remove unused doubleSpeed parameter from m3ExtraCycles call
+gambatte_sdl:
+    - Thread safety, bigger sound buffer
+    - Compile on more platforms. Thanks to Thristian for the find.
+    - actually increment iterator so the loop makes some sense (parser.cpp)
+gambatte_qt:
+    - fix 64-bit compile. Thanks to Nach.
+    - better license info for x11getprocaddress.cpp
+    - initial joystick support, mostly using SDL's joystick code (separated from
+      the rest of SDL)
+    - use binary search for gb inputs.
+all:
+    - make sure to use std:: despite sloppy compilers allowing omission. Thanks
+      to blargg for the reminder.
+    - get rid of some valgrind warnings. Thanks to Nach for noticing.
+hwtests:
+    - add tests for wx effects on PPU read timings.
+build:
+    - add -Wextra to default compile flags
+doc:
+    - mention optional zlib dependency
+    - additions to thanks section
+
+-- 0.1.1 -- 2007-08-29 --
+libgambatte:
+    - fix integer overflow in color conversion to rgb16
+    - only accept valid filter indexes
+gambatte_sdl:
+    - print version
+    - print usage
+    - support command line arguments.
+    - add option for starting in full-screen
+    - add option for using video filter
+gambatte_qt:
+    - clean up obsolete includes.
+    - directdraw: only use alpha if primary surface uses it.
+    - add support for loading rom from porgam argument.
+    - s/"a highly accurate"/"an accuracy-focused"/ in about box
+    - gditoggler: fix unordered video mode listing
+build:
+    - Support external CPPFLAGS
+    - Use sdl-config
+doc:
+    - fix silly wording in README about section
+    - s/seperate/separate/
+    - s/Automake/Make/
+    - mention XShm dependency
+    - mention sys/shm.h requirement
+    - document key mapping better
+    - s/"a highly accurate"/"an accuracy-focused"/
+    - add man pages
